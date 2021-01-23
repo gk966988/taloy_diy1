@@ -15,14 +15,14 @@ from models.resnest.seresnext import se_resnext50, se_resnext101
 from models.resnest.resnest import *
 import sys
 
-url_path = {'kaggle':{'efficientnet-b0':'../input/efficientnet/adv-efficientnet-b0-b64d5a18.pth',
-                      'efficientnet-b1':'../input/efficientnet/adv-efficientnet-b1-0f3ce85a.pth',
-                      'efficientnet-b2':'../input/efficientnet/adv-efficientnet-b2-6e9d97e5.pth',
-                      'efficientnet-b3':'../input/efficientnet/adv-efficientnet-b3-cdd7c0f4.pth',
+url_path = {'kaggle':{'efficientnet-b0':'../input/efficientnet-pytorch-pretrained/adv-efficientnet-b0-b64d5a18.pth',
+                      'efficientnet-b1':'../input/efficientnet-pytorch-pretrained/adv-efficientnet-b1-0f3ce85a.pth',
+                      'efficientnet-b2':'../input/efficientnet-pytorch-pretrained/adv-efficientnet-b2-6e9d97e5.pth',
+                      'efficientnet-b3':'../input/efficientnet-pytorch-pretrained-pytorch-pretrained/adv-efficientnet-b3-cdd7c0f4.pth',
                       'efficientnet-b4':'../input/efficientnet/adv-efficientnet-b4-44fb3a87.pth',
-                      'efficientnet-b5':'../input/efficientnet/adv-efficientnet-b5-86493f6b.pth',
-                      'efficientnet-b6':'../input/efficientnet/adv-efficientnet-b6-ac80338e.pth',
-                      'efficientnet-b7':'../input/efficientnet/adv-efficientnet-b7-4652b6dd.pth'},
+                      'efficientnet-b5':'../input/efficientnet-pytorch-pretrained/adv-efficientnet-b5-86493f6b.pth',
+                      'efficientnet-b6':'../input/efficientnet-pytorch-pretrained/adv-efficientnet-b6-ac80338e.pth',
+                      'efficientnet-b7':'../input/efficientnet-pytorch-pretrained/adv-efficientnet-b7-4652b6dd.pth'},
             'github':{'efficientnet-b0': 'https://github.com/lukemelas/EfficientNet-PyTorch/releases/download/1.0/adv-efficientnet-b0-b64d5a18.pth',
                       'efficientnet-b1': 'https://github.com/lukemelas/EfficientNet-PyTorch/releases/download/1.0/adv-efficientnet-b1-0f3ce85a.pth',
                       'efficientnet-b2': 'https://github.com/lukemelas/EfficientNet-PyTorch/releases/download/1.0/adv-efficientnet-b2-6e9d97e5.pth',

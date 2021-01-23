@@ -190,14 +190,14 @@ class Resnest269(nn.Module):
 def get_net(modelName, num_classes, weight_path):
     if modelName == 'efficientnet-b0':
         print('using efficientnet-b0')
-        state = model_zoo.load_url(url_path[weight_path]['efficientnet-b0'])
+        state = torch.load(url_path[weight_path]['efficientnet-b0'])
         model = EfficientNet.from_name("efficientnet-b0")
         model.load_state_dict(state)
         model._fc = torch.nn.Linear(1280, num_classes)
         return model
     elif modelName == 'efficientnet-b2':
         print('using efficientnet-b2')
-        state = model_zoo.load_url(url_path[weight_path]['efficientnet-b2'])
+        state = torch.load(url_path[weight_path]['efficientnet-b2'])
         model = EfficientNet.from_name("efficientnet-b2")
         model.load_state_dict(state)
         # model._avg_pooling = GeM()
@@ -211,7 +211,7 @@ def get_net(modelName, num_classes, weight_path):
     elif modelName == 'efficientnet-b3':
         print('using efficientnet-b3')
         # 必须使用该方法下载模型，然后加载
-        state = model_zoo.load_url(url_path[weight_path]['efficientnet-b3'])
+        state = torch.load(url_path[weight_path]['efficientnet-b3'])
         model = EfficientNet.from_name("efficientnet-b3")
         model.load_state_dict(state)
         model._fc = nn.Sequential(
@@ -224,7 +224,7 @@ def get_net(modelName, num_classes, weight_path):
     elif modelName == 'efficientnet-b4':
         print('using efficientnet-b4')
         # 必须使用该方法下载模型，然后加载
-        state = model_zoo.load_url(url_path[weight_path]['efficientnet-b4'])
+        state = torch.load(url_path[weight_path]['efficientnet-b4'])
         model = EfficientNet.from_name("efficientnet-b4")
         model.load_state_dict(state)
         # model._avg_pooling = GeM()
@@ -239,7 +239,7 @@ def get_net(modelName, num_classes, weight_path):
     elif modelName == 'efficientnet-b5':
         print('using efficientnet-b5')
         # 必须使用该方法下载模型，然后加载
-        state = model_zoo.load_url(url_path[weight_path]['efficientnet-b5'])
+        state = torch.load(url_path[weight_path]['efficientnet-b5'])
         model = EfficientNet.from_name("efficientnet-b5")
         model.load_state_dict(state)
         # model._avg_pooling = GeM()
@@ -254,7 +254,7 @@ def get_net(modelName, num_classes, weight_path):
     elif modelName == 'efficientnet-b6':
         print('using efficientnet-b6')
         # 必须使用该方法下载模型，然后加载
-        state = model_zoo.load_url(url_path[weight_path]['efficientnet-b6'])
+        state = torch.load(url_path[weight_path]['efficientnet-b6'])
         model = EfficientNet.from_name("efficientnet-b6")
         model.load_state_dict(state)
         # model._avg_pooling = GeM()
@@ -269,7 +269,7 @@ def get_net(modelName, num_classes, weight_path):
     elif modelName == 'efficientnet-b7':
         print('using efficientnet-b7')
         # 必须使用该方法下载模型，然后加载
-        state = model_zoo.load_url(url_path[weight_path]['efficientnet-b7'])
+        state = torch.load(url_path[weight_path]['efficientnet-b7'])
         model = EfficientNet.from_name("efficientnet-b7")
         model.load_state_dict(state)
         # model._avg_pooling = GeM()

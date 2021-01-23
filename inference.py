@@ -19,6 +19,8 @@ class CFG:
     num_epochs = 60
     n_fold = 5
     NUM_FOLDS_TO_RUN = [1,2,3,4,5]
+    PIXEL_MEAN = [0.485, 0.456, 0.406]
+    PIXEL_STD = [0.229, 0.224, 0.225]
     smoothing = 0.2
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -31,9 +33,9 @@ def load_model(weight_path, imgs_path):
     model.cuda()
     model.eval()
     transform = T.Compose([
-        T.Resize(cfg.INPUT.SIZE_TRAIN),
+        T.Resize([CFG.img_size, CFG.img_size]),
         T.ToTensor(),
-        T.Normalize(mean=cfg.INPUT.PIXEL_MEAN, std=cfg.INPUT.PIXEL_STD)
+        T.Normalize(mean=CFG.PIXEL_MEAN, std=CFG.PIXEL_STD)
     ])
 
     for img_path in imgs_path:
@@ -72,16 +74,6 @@ if __name__=='__main__':
     sub = pd.DataFrame({'image_id': imgs_name, 'label': pred})
     # print(sub)
     sub.to_csv("submission.csv", index=False)
-
-
-
-
-
-
-
-
-
-
 
 
 

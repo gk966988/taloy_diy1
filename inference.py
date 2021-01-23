@@ -44,7 +44,7 @@ def load_model(weight_path, imgs_path):
         img = img.unsqueeze(0)
         img = img.cuda()
         with torch.no_grad():
-            output, _ = model(img)
+            output = model(img)
             if outputs is None:
                 outputs = output
             else:

@@ -26,7 +26,7 @@ class CFG:
 
 
 def load_model(weight_path, imgs_path):
-
+    outputs = None
     model = get_net(CFG.model_name, 5, 'kaggle')
     state_dict = torch.load(weight_path)
     model.load_state_dict(state_dict)

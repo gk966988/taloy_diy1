@@ -68,7 +68,7 @@ if __name__=='__main__':
     pred = torch.zeros(size=[len(imgs_name), 5])
     for weight in weights:
         output = load_model(weight, imgs_path)
-        pred += output/4
+        pred += output.cpu()/4
     pred = F.softmax(pred, dim=1).cpu().numpy()
     pred = pred.argmax(1)
     sub = pd.DataFrame({'image_id': imgs_name, 'label': pred})

@@ -55,8 +55,8 @@ if __name__=='__main__':
     from tqdm import tqdm
     import pandas as pd
 
-    weights = ['Fold2_0.8835705045278137_epoch3.bin', 'Fold2_0.884679356865644_epoch6.bin', 'Fold2_0.8926261319534282_epoch7.bin', 'Fold2_0.8944742191831454_epoch9.bin']
-    root = '/kaggle/input/cassava-leaf-disease-classification'
+    weights = ['../input/taloy-diy11/weights/Fold2_0.8835705045278137_epoch3.bin', '../input/taloy-diy11/weights/Fold2_0.884679356865644_epoch6.bin', '../input/taloy-diy11/weights/Fold2_0.8926261319534282_epoch7.bin', '../input/taloy-diy11/weights/Fold2_0.8944742191831454_epoch9.bin']
+    root = '../input/cassava-leaf-disease-classification'
     path_dir = join(root, 'test_images')
     imgs_name = os.listdir(path_dir)
     imgs_path = [os.path.join(path_dir, e) for e in imgs_name]

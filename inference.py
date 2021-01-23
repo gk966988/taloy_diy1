@@ -49,7 +49,7 @@ def load_model(weight_path, imgs_path):
                 outputs = output
             else:
                 outputs = torch.cat((outputs, output), dim=0)
-    return outputs, imgs_name
+    return outputs
 
 
 
@@ -67,7 +67,7 @@ if __name__=='__main__':
     imgs_path = [os.path.join(path_dir, e) for e in imgs_name]
     pred = torch.zeros(size=[len(imgs_name), 5])
     for weight in weights:
-        output, imgs_name = load_model(weight, imgs_path)
+        output = load_model(weight, imgs_path)
         pred += output/4
     pred = F.softmax(pred, dim=1).cpu().numpy()
     pred = pred.argmax(1)

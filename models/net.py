@@ -229,10 +229,10 @@ def get_net(modelName, num_classes, weight_path):
         model.load_state_dict(state)
         # model._avg_pooling = GeM()
         model._fc = nn.Sequential(
-            torch.nn.Linear(1792, 256),
-            nn.ReLU(),
-            nn.Dropout(0.5),
-            nn.Linear(256, num_classes)
+            torch.nn.Linear(1792, num_classes),
+#             nn.ReLU(),
+#             nn.Dropout(0.5),
+#             nn.Linear(256, num_classes)
         )
         return model
 

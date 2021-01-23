@@ -1,5 +1,5 @@
 from models.net import get_net
-
+import torch
 
 class CFG:
     model_name = 'efficientnet-b4'

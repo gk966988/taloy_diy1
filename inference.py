@@ -51,6 +51,7 @@ def load_model(weight_path, imgs_path):
         img = img.cuda()
         with torch.no_grad():
             output = model(img)
+            output = output.view(1, 8, -1).mean(1)
             if outputs is None:
                 outputs = output
             else:

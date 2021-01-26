@@ -3,6 +3,7 @@ import torch
 import torchvision.transforms as T
 from torch.nn import functional as F
 from PIL import Image
+import ttach as tta
 
 class CFG:
     model_name = 'efficientnet-b4'
@@ -32,6 +33,7 @@ def load_model(weight_path, imgs_path):
     model.load_state_dict(state_dict)
     model.cuda()
     model.eval()
+    model = tta.SegmentationTTAWrapper(model, tta.aliases.d4_transform(), merge_mode='mean')
     transform = T.Compose([
         T.Resize([CFG.img_size, CFG.img_size]),
         T.ToTensor(),

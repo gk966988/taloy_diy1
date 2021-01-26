@@ -62,7 +62,7 @@ if __name__=='__main__':
     from tqdm import tqdm
     import pandas as pd
 
-    weights = ['../input/taloy-diy112/weights/Fold2_0.8835705045278137_epoch3.bin', '../input/taloy-diy112/weights/Fold2_0.884679356865644_epoch6.bin', '../input/taloy-diy112/weights/Fold2_0.8926261319534282_epoch7.bin', '../input/taloy-diy112/weights/Fold2_0.8944742191831454_epoch9.bin']
+    weights = ['../input/taloydiy112/weights/Fold2_0.8835705045278137_epoch3.bin', '../input/taloydiy112/weights/Fold2_0.884679356865644_epoch6.bin', '../input/taloydiy112/weights/Fold2_0.8926261319534282_epoch7.bin', '../input/taloydiy112/weights/Fold2_0.8944742191831454_epoch9.bin']
     root = '../input/cassava-leaf-disease-classification'
     path_dir = join(root, 'test_images')
     imgs_name = os.listdir(path_dir)
